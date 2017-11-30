@@ -37,9 +37,9 @@ class Graph{
 			return;
 		}
 
-		neighbours.forEach(function(item){
-			paths.push(item);
-			this.printNodePaths(pivot,item,paths);
+		neighbours.forEach(function(member){
+			paths.push(member);
+			this.printNodePaths(pivot,member,paths);
 			// remove the nodes which have already been traversed 
 			paths.pop();
 		}.bind(this));
