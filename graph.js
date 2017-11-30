@@ -60,7 +60,6 @@ class Graph{
 
 // input
 let adjacencyList = [[1,2],[3,5],[5],[],[],[],[2]];
-let paths = [];
 let graph = new Graph(adjacencyList);
 graph.printZeroIndegreePaths();
 
