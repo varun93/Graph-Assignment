@@ -38,10 +38,10 @@ class Graph{
 		}
 
 		neighbours.forEach(function(member){
-			paths.push(member);
-			this.printNodePaths(pivot,member,paths);
+			path.push(member);
+			this.printNodePaths(pivot,member,path);
 			// remove the nodes which have already been traversed 
-			paths.pop();
+			path.pop();
 		}.bind(this));
 
 	}
