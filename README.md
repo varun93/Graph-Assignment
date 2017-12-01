@@ -19,8 +19,7 @@ I have taken a ***adjacency list*** representation of a graph for solving the ab
 
 ## How to run the code?
 
-The file `input-handler.js` is responsible for interactively building the graph through command line interface.
-In order to quickly get started you can bypass it by creating a graph instance by providing a prepopulated adjacency matrix such as this:
+The file `input-handler.js` is responsible for interactively building the graph through command line interface. In order to quickly get started you can create a graph instance by providing a prepopulated adjacency matrix and call the relevant method:
 
 ```
 let adjacencyList = [[1,2],[3,5],[5],[],[],[],[2]];
@@ -28,5 +27,5 @@ let graph = new Graph(adjacencyList);
 graph.printZeroIndegreePaths();
 ```
 
-`node input-handler.js`
+`node input-handler.js` 
 It is assumed that node is installed in the system.
