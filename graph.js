@@ -31,18 +31,15 @@ class Graph{
 	printNodePaths(node,path=[]){
 
 		let neighbours = this.adjacencyList[node];
-
-		if(path.length == 0){
-			path.push(node);
-		}
-
+		
+		path.push(node);
+		
 		if(neighbours.length == 0){
 			console.log(path.join(" -> "));
 			return;
 		}
 
 		neighbours.forEach(function(member){
-			path.push(member);
 			this.printNodePaths(member,path);
 			// remove the nodes which have already been traversed 
 			path.pop();
