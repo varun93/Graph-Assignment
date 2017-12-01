@@ -28,18 +28,22 @@ class Graph{
 	}
 
 	// the first parameter pivot is only for printing purpose
-	printNodePaths(pivot,node,path=[]){
+	printNodePaths(node,path=[]){
 
 		let neighbours = this.adjacencyList[node];
 
+		if(path.length == 0){
+			path.push(node);
+		}
+
 		if(neighbours.length == 0){
-			console.log([pivot].concat(path).join(" -> "));
+			console.log(path.join(" -> "));
 			return;
 		}
 
 		neighbours.forEach(function(member){
 			path.push(member);
-			this.printNodePaths(pivot,member,path);
+			this.printNodePaths(member,path);
 			// remove the nodes which have already been traversed 
 			path.pop();
 		}.bind(this));
@@ -51,7 +55,7 @@ class Graph{
 		let zeroInDegreeNodes = this.getZeroInDegreeNodes();
 
 		zeroInDegreeNodes.forEach(function(zeroInDegreeNode){
-			this.printNodePaths(zeroInDegreeNode,zeroInDegreeNode,[]);	
+			this.printNodePaths(zeroInDegreeNode,[]);	
 		}.bind(this));
 
 	}
